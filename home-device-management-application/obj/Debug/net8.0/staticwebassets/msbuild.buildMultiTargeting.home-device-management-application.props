@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\home-device-management-application.props" />
+</Project>

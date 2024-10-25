@@ -1,0 +1,38 @@
+﻿<!-- Views/Device/AddDevice.cshtml -->
+@{
+    ViewData["Title"] = "Add Device";
+}
+
+<h2>Add New Device</h2>
+
+<form method="post" enctype="multipart/form-data" action="/Device/AddDevice">
+    <div class="form-group">
+        <label for="productName">Product Name</label>
+        <input type="text" class="form-control" name="productName" required>
+    </div>
+    <div class="form-group">
+        <label for="brand">Brand</label>
+        <input type="text" class="form-control" name="brand" required>
+    </div>
+    <div class="form-group">
+        <label for="buyDate">Buy Date</label>
+        <input type="date" class="form-control" name="buyDate" required>
+    </div>
+    <div class="form-group">
+        <label for="warrantyPeriod">Warranty Period (in months)</label>
+        <input type="number" class="form-control" name="warrantyPeriod" required>
+    </div>
+    <div class="form-group">
+        <label for="servicePeriod">Service Period (in months)</label>
+        <input type="number" class="form-control" name="servicePeriod" required>
+    </div>
+    <div class="form-group">
+        <label for="customerServiceNumber">Customer Service Number</label>
+        <input type="text" class="form-control" name="customerServiceNumber" required>
+    </div>
+    <div class="form-group">
+        <label for="ProductImage">Upload Product Image</label>
+        <input type="file" class="form-control" name="ProductImage" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Add Device</button>
+</form>

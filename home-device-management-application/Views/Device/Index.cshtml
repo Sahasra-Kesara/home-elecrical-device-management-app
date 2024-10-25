@@ -1,0 +1,38 @@
+﻿@using System.Linq
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product Image</th>
+            <th>Product Name</th>
+            <th>Brand</th>
+            <th>Buy Date</th>
+            <th>Warranty Period (Months)</th>
+            <th>Service Period (Months)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@item.ProductImage" alt="@item.ProductName" style="width:100px; height:auto;" />
+                </td>
+                <td>@item.ProductName</td>
+                <td>@item.Brand</td>
+                <td>@item.BuyDate.ToShortDateString()</td>
+                <td>@item.WarrantyPeriod</td>
+                <td>@item.ServicePeriod</td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id = item.Id })">Edit</a> |
+                    <a href="@Url.Action("Delete", new { id = item.Id })">Delete</a>
+                </td>
+            </tr>
+        }
+        @if (Model == null)
+        {
+            <tr><td colspan="7">No devices found.</td></tr>
+        }
+    </tbody>
+</table>
